@@ -31,5 +31,6 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        df -h
-        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        docker pull quay.io/go-skynet/local-ai:latest
+        docker tag quay.io/go-skynet/local-ai:latest lyukun/local-ai:latest
+        docker push lyukun/local-ai:latest
